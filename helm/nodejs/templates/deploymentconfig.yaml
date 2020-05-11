@@ -30,6 +30,13 @@ spec:
       containers:
       - name: nodejs-example
         image: " "
+        resources:
+          limits:
+            memory: 200m
+            cpu: 25m
+          requests:
+            memory: 100m
+            cpu: 25m
         ports:
         - containerPort: 8080
         readinessProbe:
