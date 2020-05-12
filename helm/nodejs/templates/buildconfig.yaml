@@ -5,13 +5,6 @@ metadata:
   annotations:
     description: Defines how to build the application
 spec:
-  resources:
-    limits:
-      cpu: "100m"
-      memory: "256Mi"
-    requests:
-      cpu: "100m"
-      memory: "256Mi"
   source:
     type: Git
     git:
@@ -32,6 +25,13 @@ spec:
     to:
       kind: ImageStreamTag
       name: {{ print .Values.name ":latest" | quote }}
+  resources:
+    limits:
+      cpu: "100m"
+      memory: "256Mi"
+    requests:
+      cpu: "80m"
+      memory: "128Mi"
   triggers:
   - type: ImageChange
   - type: ConfigChange
