@@ -8,6 +8,13 @@ metadata:
 spec:
   strategy:
     type: Rolling
+    resources:
+      limits:
+        memory: 100m
+        cpu: 256Mi
+      requests:
+        memory: 80m
+        cpu: 128Mi
   triggers:
   - type: ImageChange
     imageChangeParams:
